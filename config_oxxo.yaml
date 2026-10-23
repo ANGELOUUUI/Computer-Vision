@@ -22,8 +22,8 @@ cruce:
 # todos los timestamps). clima / luz / incidencias van a videos.csv.
 # -----------------------------------------------------------------------------
 videos:
-  - archivo: data/Miercoles (1)/oxxo_n.avi
-    inicio: "2026-10-15 17:30:11"
+  - archivo: data/Miercoles (1)/oxxo_m.avi
+    inicio: "2026-10-15 06:45:11"
     clima: nublado
     luz: dia
     incidencias: ""
@@ -131,7 +131,7 @@ movimientos:
   
   # Desde el Sur (va hacia el Norte)
   - {acceso: S, salida: sal_N, movimiento: frente}
-    
+
   # Desde el Poniente (va hacia el Oriente)
   - {acceso: O, salida: sal_E, movimiento: frente}
 # -----------------------------------------------------------------------------

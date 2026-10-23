@@ -1,7 +1,7 @@
 <!-- AUTO:INICIO (esta sección la regenera el pipeline; no editar) -->
 # Notas del cruce: Cruce OXXO (`oxxo`)
 
-- Última ejecución: 2026-10-23T02:23:08
+- Última ejecución: 2026-10-23T03:58:15
 - Pipeline: pipeline_cruces v1.0.0 · Python 3.13.12 · ultralytics 8.4.184
 - Modelo de detección: `yolo11n.pt` (conf=0.25, iou=0.5, imgsz=960)
 - Clases usadas: 2→auto, 3→moto, 5→autobus, 7→camion
@@ -9,23 +9,25 @@
 
 ## Calidad del seguimiento
 
-- Vehículos en eventos.csv: **3140**
-- Completos: 2044 (65.1%)
-- Perdidos antes de salir (movimiento *desconocido*): 300 (9.6%)
-- Sin acceso (solo se vio la salida): 796 (25.4%)
-- Combinación acceso→salida no configurada: 0 (0.0%)
+- Vehículos en eventos.csv: **7097**
+- Completos: 3723 (52.5%)
+- Perdidos antes de salir (movimiento *desconocido*): 2355 (33.2%)
+- Sin acceso (solo se vio la salida): 1007 (14.2%)
+- Combinación acceso→salida no configurada: 12 (0.2%)
 
 | Acceso | Vehículos | Perdidos | % perdidos |
 |---|---:|---:|---:|
-| N | 2344 | 300 | 12.8% |
+| N | 2167 | 276 | 12.7% |
+| O | 445 | 116 | 26.1% |
+| S | 3478 | 1963 | 56.4% |
 
 ## Videos procesados
 
-- `oxxo_m.avi`: 7315.9 s, 107141 frames, 600.00 fps · revinculaciones=864 · IDs sin cruce de línea=8818 · cambios de semáforo=0
+- `oxxo_m.avi`: 7315.9 s, 107141 frames, 600.00 fps · revinculaciones=1146 · IDs sin cruce de línea=4643 · cambios de semáforo=0
 
 ## Agregación
 
-- Eventos usados en conteos: 2344 de 3140
+- Eventos usados en conteos: 6090 de 7097
 - Eliminados por ventanas descartadas: 0 (0 ventanas)
 
 ## Semáforo y filas

@@ -1,14 +1,14 @@
 {
-  "oxxo_n.avi": {
-    "sin_acceso": 836,
-    "completo": 2490,
-    "revinculaciones": 590,
-    "sin_cruce": 3939,
-    "perdido": 1122,
-    "combinacion_no_configurada": 4,
-    "frames": 106855,
+  "oxxo_m.avi": {
+    "sin_acceso": 1007,
+    "completo": 3723,
+    "revinculaciones": 1146,
+    "sin_cruce": 4643,
+    "perdido": 2355,
+    "combinacion_no_configurada": 12,
+    "frames": 107141,
     "fps": 600.0,
-    "segundos": 7329.6,
+    "segundos": 7315.9,
     "cambios_semaforo": 0,
     "registros_fila": 0,
     "semaforos_evaluados": 0

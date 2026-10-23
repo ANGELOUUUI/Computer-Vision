@@ -22,8 +22,8 @@ cruce:
 # todos los timestamps). clima / luz / incidencias van a videos.csv.
 # -----------------------------------------------------------------------------
 videos:
-  - archivo: data/Miercoles (1)/oxxo_m.avi
-    inicio: "2026-10-15 06:45:11"
+  - archivo: data/Miercoles (1)/oxxo_n.avi
+    inicio: "2026-10-15 17:30:11"
     clima: nublado
     luz: dia
     incidencias: ""
@@ -82,8 +82,20 @@ accesos:
   - id: N
     nombre: "Avenida Aviación, entrando desde el norte"
     orden: 1
-    linea: [[523, 228], [842, 215]]
+    linea: [[838, 209], [454, 220]]
     hacia: [673, 296]
+
+  - id: S
+    nombre: "Avenida Aviación, entrando desde el sur"
+    orden: 3
+    linea: [[1278, 259], [905, 278]]
+    hacia: [1016, 232]
+
+  - id: O
+    nombre: "Avenida 5 de Mayo, entrando desde el poniente"
+    orden: 4
+    linea: [[256, 440], [0, 667]]
+    hacia: [306, 556]
 
 # -----------------------------------------------------------------------------
 # Salidas del cruce (mismo formato; `hacia` apunta hacia afuera del cruce)
@@ -98,8 +110,14 @@ salidas:
   - id: sal_E
     nombre: "Salida de Avenida Aviación hacia 5 de Mayo (Este)"
     orden: 2
-    linea: [[1034, 533], [915, 323]]
-    hacia: [1065, 394]
+    linea: [[912, 322], [1090, 710]]
+    hacia: [1186, 534]
+
+  - id: sal_N
+    nombre: "Salida de Aviación hacia el norte"
+    orden: 1
+    linea: [[855, 195], [1092, 186]]
+    hacia: [933, 156]
 
 # -----------------------------------------------------------------------------
 # Movimientos: qué vuelta es cada combinación acceso -> salida
@@ -107,9 +125,15 @@ salidas:
 # vehículo las hace, queda como "combinacion_no_configurada" en eventos.csv.
 # -----------------------------------------------------------------------------
 movimientos:
+  # Desde el Norte (va hacia el Sur)
   - {acceso: N, salida: sal_S, movimiento: frente}
   - {acceso: N, salida: sal_E, movimiento: izquierda}
-
+  
+  # Desde el Sur (va hacia el Norte)
+  - {acceso: S, salida: sal_N, movimiento: frente}
+    
+  # Desde el Poniente (va hacia el Oriente)
+  - {acceso: O, salida: sal_E, movimiento: frente}
 # -----------------------------------------------------------------------------
 # Semáforos visibles en cámara.
 # -----------------------------------------------------------------------------

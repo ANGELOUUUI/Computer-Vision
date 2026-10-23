@@ -1,0 +1,7 @@
+id,nombre,tipo,orden,x1,y1,x2,y2,hacia_x,hacia_y,semaforo,tiene_zona_cola
+N,"Avenida Aviación, entrando desde el norte",acceso,1,838.0,209.0,454.0,220.0,673.0,296.0,,False
+S,"Avenida Aviación, entrando desde el sur",acceso,3,1278.0,259.0,905.0,278.0,1016.0,232.0,,False
+O,"Avenida 5 de Mayo, entrando desde el poniente",acceso,4,256.0,440.0,0.0,667.0,306.0,556.0,,False
+sal_N,Salida de Aviación hacia el norte,salida,1,855.0,195.0,1092.0,186.0,933.0,156.0,,False
+sal_E,Salida de Avenida Aviación hacia 5 de Mayo (Este),salida,2,912.0,322.0,1090.0,710.0,1186.0,534.0,,False
+sal_S,Salida hacia el sur (dirección Tec),salida,3,200.0,544.0,1015.0,532.0,553.0,665.0,,False

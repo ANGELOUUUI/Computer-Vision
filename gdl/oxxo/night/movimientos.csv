@@ -1,0 +1,5 @@
+acceso,salida,movimiento
+N,sal_S,frente
+N,sal_E,izquierda
+S,sal_N,frente
+O,sal_E,frente

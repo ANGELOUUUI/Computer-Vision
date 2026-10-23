@@ -1,0 +1,2 @@
+video,semaforo,timestamp,frame,estado,estado_anterior,score
+mangueras_n.avi,S1,2026-10-15 08:07:02.846,73540,verde,inicio,0.264

@@ -22,7 +22,7 @@ cruce:
 # todos los timestamps). clima / luz / incidencias van a videos.csv.
 # -----------------------------------------------------------------------------
 videos:
-  - archivo: data/Miercoles (1)/mangueras_m.avi
+  - archivo: data/Miercoles (1)/mangueras_n.avi
     inicio: "2026-10-15 06:45:11"
     clima: nublado
     luz: dia

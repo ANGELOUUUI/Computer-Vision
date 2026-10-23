@@ -1,0 +1,8 @@
+id,nombre,tipo,orden,x1,y1,x2,y2,hacia_x,hacia_y,semaforo,tiene_zona_cola
+N,"Base Aérea, entrando desde el norte",acceso,1,794.0,208.0,981.0,236.0,843.0,300.0,,False
+E,"Camino Viejo a Tesistán, entrando desde el oriente",acceso,2,1499.0,407.0,1625.0,1064.0,1281.0,702.0,,False
+S,"Base Aérea, entrando desde el sur",acceso,3,1089.0,1068.0,379.0,876.0,715.0,835.0,,False
+O,"Camino Viejo a Tesistán, entrando desde el poniente",acceso,4,196.0,608.0,7.0,869.0,217.0,760.0,,False
+sal_N,Salida Base Aérea hacia el norte,salida,1,983.0,225.0,1171.0,244.0,1064.0,177.0,,False
+sal_S,Salida Base Aérea hacia el sur,salida,3,7.0,765.0,658.0,1071.0,71.0,1009.0,,False
+sal_O,Salida Camino Viejo a Tesistán hacia el poniente,salida,4,477.0,289.0,180.0,558.0,219.0,410.0,,False

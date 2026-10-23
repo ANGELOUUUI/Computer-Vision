@@ -13,18 +13,18 @@
 # =============================================================================
 
 cruce:
-  id: oxxo
-  nombre: "Cruce OXXO"
-  carpeta_salida: gdl/oxxo            # aquí quedan los 14 archivos del contrato
+  id: mangueras
+  nombre: "Cruce Mangueras"
+  carpeta_salida: gdl/mangueras            # aquí quedan los 14 archivos del contrato
 
 # -----------------------------------------------------------------------------
 # Videos del cruce. `inicio` = fecha y hora REAL del primer frame (se usa para
 # todos los timestamps). clima / luz / incidencias van a videos.csv.
 # -----------------------------------------------------------------------------
 videos:
-  - archivo: videos/oxxo/oxxo_2026-10-15_0730.mp4
-    inicio: "2026-10-15 07:30:00"
-    clima: despejado
+  - archivo: data/Miercoles (1)/mangueras_m.avi
+    inicio: "2026-10-15 06:45:11"
+    clima: nublado
     luz: dia
     incidencias: ""
   # - archivo: videos/oxxo/oxxo_2026-10-15_1830.mp4
@@ -80,58 +80,49 @@ procesamiento:
 # -----------------------------------------------------------------------------
 accesos:
   - id: N
-    nombre: "Av. Norte, entrando desde el norte"
+    nombre: "Base Aérea, entrando desde el norte"
     orden: 1
-    linea: [[820, 330], [945, 330]]
-    hacia: [880, 380]
-    zona_cola: [[805, 120], [945, 120], [945, 328], [805, 328]]
-    semaforo: S1
+    linea: [[794, 208], [981, 236]]
+    hacia: [843, 300]
+
   - id: E
-    nombre: "Calle Oriente, entrando desde el oriente"
+    nombre: "Camino Viejo a Tesistán, entrando desde el oriente"
     orden: 2
-    linea: [[1250, 455], [1250, 555]]
-    hacia: [1200, 505]
-    zona_cola: [[1252, 450], [1600, 440], [1600, 555], [1252, 555]]
-    semaforo: S2
+    linea: [[1499, 407], [1625, 1064]]
+    hacia: [1281, 702]
   - id: S
-    nombre: "Av. Sur, entrando desde el sur"
+    nombre: "Base Aérea, entrando desde el sur"
     orden: 3
-    linea: [[985, 800], [1165, 800]]
-    hacia: [1075, 750]
-    zona_cola: [[985, 802], [1165, 802], [1230, 1075], [985, 1075]]
-    semaforo: S1
+    linea: [[1089, 1068], [379, 876]]
+    hacia: [715, 835]
+
   - id: O
-    nombre: "Calle Poniente, entrando desde el poniente"
+    nombre: "Camino Viejo a Tesistán, entrando desde el poniente"
     orden: 4
-    linea: [[640, 580], [640, 690]]
-    hacia: [690, 635]
-    zona_cola: [[300, 585], [638, 580], [638, 690], [300, 700]]
-    semaforo: S2
+    linea: [[196, 608], [7, 869]]
+    hacia: [217, 760]
 
 # -----------------------------------------------------------------------------
 # Salidas del cruce (mismo formato; `hacia` apunta hacia afuera del cruce)
 # -----------------------------------------------------------------------------
 salidas:
   - id: sal_N
-    nombre: "Salida al norte"
+    nombre: "Salida Base Aérea hacia el norte"
     orden: 1
-    linea: [[975, 330], [1100, 330]]
-    hacia: [1040, 280]
-  - id: sal_E
-    nombre: "Salida al oriente"
-    orden: 2
-    linea: [[1250, 575], [1250, 680]]
-    hacia: [1300, 627]
+    linea: [[983, 225], [1171, 244]]
+    hacia: [1064, 177]
+
   - id: sal_S
-    nombre: "Salida al sur"
+    nombre: "Salida Base Aérea hacia el sur"
     orden: 3
-    linea: [[760, 800], [950, 800]]
-    hacia: [855, 850]
+    linea: [[7, 765], [658, 1071]]
+    hacia: [71, 1009]
+
   - id: sal_O
-    nombre: "Salida al poniente"
+    nombre: "Salida Camino Viejo a Tesistán hacia el poniente"
     orden: 4
-    linea: [[640, 450], [640, 565]]
-    hacia: [590, 507]
+    linea: [[477, 289], [180, 558]]
+    hacia: [219, 410]
 
 # -----------------------------------------------------------------------------
 # Movimientos: qué vuelta es cada combinación acceso -> salida
@@ -139,23 +130,20 @@ salidas:
 # vehículo las hace, queda como "combinacion_no_configurada" en eventos.csv.
 # -----------------------------------------------------------------------------
 movimientos:
-  # Desde el norte (va hacia el sur)
-  - {acceso: N, salida: sal_E, movimiento: izquierda}
+  # Desde el Norte (Base Aérea)
   - {acceso: N, salida: sal_S, movimiento: frente}
   - {acceso: N, salida: sal_O, movimiento: derecha}
-  - {acceso: N, salida: sal_N, movimiento: U}
-  # Desde el oriente (va hacia el poniente)
-  - {acceso: E, salida: sal_S, movimiento: izquierda}
+
+  # Desde el Oriente (Camino Viejo a Tesistán)
   - {acceso: E, salida: sal_O, movimiento: frente}
   - {acceso: E, salida: sal_N, movimiento: derecha}
-  # Desde el sur (va hacia el norte)
-  - {acceso: S, salida: sal_O, movimiento: izquierda}
+
+  # Desde el Sur (Base Aérea)
   - {acceso: S, salida: sal_N, movimiento: frente}
-  - {acceso: S, salida: sal_E, movimiento: derecha}
-  - {acceso: S, salida: sal_S, movimiento: U}
-  # Desde el poniente (va hacia el oriente)
+  - {acceso: S, salida: sal_O, movimiento: izquierda}
+
+  # Desde el Poniente (Camino Viejo a Tesistán)
   - {acceso: O, salida: sal_N, movimiento: izquierda}
-  - {acceso: O, salida: sal_E, movimiento: frente}
   - {acceso: O, salida: sal_S, movimiento: derecha}
 
 # -----------------------------------------------------------------------------

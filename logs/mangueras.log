@@ -1,0 +1,162 @@
+08:59:51 [INFO] Plantillas creadas en C:\Users\angel\repos\5to\computer_vision\gdl\mangueras: ventanas_descartadas.csv, conteo_manual.csv, notas.md
+08:59:52 [INFO] diagrama.png generado: revísalo antes de procesar todo el video
+09:33:50 [INFO] diagrama.png generado: revísalo antes de procesar todo el video
+09:34:47 [INFO] Cruce 'mangueras' inicializado en C:\Users\angel\repos\5to\computer_vision\gdl\mangueras
+09:35:00 [INFO] ======================================================================
+09:35:00 [INFO] Cruce mangueras (Cruce Mangueras) -> C:\Users\angel\repos\5to\computer_vision\gdl\mangueras
+09:35:00 [INFO] diagrama.png generado: revísalo antes de procesar todo el video
+09:35:00 [INFO] Video mangueras_m.avi: 1920x1080, 600.00 fps, 4317912 frames
+09:35:03 [INFO] Clase del modelo 2='car' -> 'auto'
+09:35:03 [INFO] Clase del modelo 3='motorcycle' -> 'moto'
+09:35:03 [INFO] Clase del modelo 5='bus' -> 'autobus'
+09:35:03 [INFO] Clase del modelo 7='truck' -> 'camion'
+09:35:36 [INFO]     0.0%  t=   60.1s  eventos=6  IDs activos=51  (27.7 fps de proceso)
+09:36:08 [INFO] Video mangueras_m.avi terminado: {'sin_acceso': 6, 'completo': 2, 'combinacion_no_configurada': 2, 'sin_cruce': 58, 'perdido': 28, 'frames': 1803, 'fps': 600.0, 'segundos': 120.0, 'cambios_semaforo': 0, 'registros_fila': 0, 'semaforos_evaluados': 1}
+09:36:08 [INFO] Agregación: {'eventos_totales': 38, 'eventos_utiles': 32, 'descartados_por_ventana': 0, 'ventanas_descartadas': 0}
+09:36:08 [INFO] Validación: 0 filas comparadas
+09:36:08 [INFO] Contrato completo: 14/14 archivos en C:\Users\angel\repos\5to\computer_vision\gdl\mangueras
+09:42:28 [INFO] diagrama.png generado: revísalo antes de procesar todo el video
+09:42:45 [INFO] ======================================================================
+09:42:45 [INFO] Cruce mangueras (Cruce Mangueras) -> C:\Users\angel\repos\5to\computer_vision\gdl\mangueras
+09:42:45 [INFO] diagrama.png generado: revísalo antes de procesar todo el video
+09:42:45 [INFO] Video mangueras_m.avi: 1920x1080, 600.00 fps, 4317912 frames
+09:42:47 [INFO] Clase del modelo 2='car' -> 'auto'
+09:42:47 [INFO] Clase del modelo 3='motorcycle' -> 'moto'
+09:42:47 [INFO] Clase del modelo 5='bus' -> 'autobus'
+09:42:47 [INFO] Clase del modelo 7='truck' -> 'camion'
+09:43:18 [INFO]     0.0%  t=   60.1s  eventos=9  IDs activos=48  (29.1 fps de proceso)
+09:43:45 [INFO] Video mangueras_m.avi terminado: {'sin_acceso': 10, 'completo': 2, 'combinacion_no_configurada': 4, 'sin_cruce': 56, 'perdido': 24, 'frames': 1803, 'fps': 600.0, 'segundos': 120.0, 'cambios_semaforo': 0, 'registros_fila': 0, 'semaforos_evaluados': 1}
+09:43:45 [INFO] Agregación: {'eventos_totales': 40, 'eventos_utiles': 30, 'descartados_por_ventana': 0, 'ventanas_descartadas': 0}
+09:43:45 [INFO] Validación: 0 filas comparadas
+09:43:45 [INFO] Contrato completo: 14/14 archivos en C:\Users\angel\repos\5to\computer_vision\gdl\mangueras
+09:45:47 [INFO] ======================================================================
+09:45:47 [INFO] Cruce mangueras (Cruce Mangueras) -> C:\Users\angel\repos\5to\computer_vision\gdl\mangueras
+09:45:47 [INFO] diagrama.png generado: revísalo antes de procesar todo el video
+09:45:48 [INFO] Video mangueras_m.avi: 1920x1080, 600.00 fps, 4317912 frames
+09:45:49 [INFO] Clase del modelo 2='car' -> 'auto'
+09:45:49 [INFO] Clase del modelo 3='motorcycle' -> 'moto'
+09:45:49 [INFO] Clase del modelo 5='bus' -> 'autobus'
+09:45:49 [INFO] Clase del modelo 7='truck' -> 'camion'
+09:46:05 [INFO]     0.0%  t=   60.1s  eventos=9  IDs activos=48  (58.4 fps de proceso)
+09:46:19 [INFO]     0.0%  t=  120.1s  eventos=16  IDs activos=80  (61.1 fps de proceso)
+09:46:34 [INFO]     0.1%  t=  180.1s  eventos=38  IDs activos=130  (60.4 fps de proceso)
+09:46:48 [INFO]     0.1%  t=  240.2s  eventos=58  IDs activos=143  (60.9 fps de proceso)
+09:47:03 [INFO]     0.1%  t=  300.2s  eventos=83  IDs activos=162  (61.0 fps de proceso)
+09:47:16 [INFO]     0.1%  t=  360.3s  eventos=135  IDs activos=162  (61.8 fps de proceso)
+09:47:30 [INFO]     0.1%  t=  420.3s  eventos=161  IDs activos=148  (62.2 fps de proceso)
+09:47:44 [INFO]     0.2%  t=  480.3s  eventos=180  IDs activos=168  (62.4 fps de proceso)
+09:47:59 [INFO]     0.2%  t=  540.4s  eventos=223  IDs activos=168  (62.5 fps de proceso)
+09:48:13 [INFO]     0.2%  t=  600.4s  eventos=244  IDs activos=190  (62.6 fps de proceso)
+09:48:28 [INFO]     0.2%  t=  660.5s  eventos=279  IDs activos=172  (62.5 fps de proceso)
+09:48:42 [INFO]     0.3%  t=  720.5s  eventos=311  IDs activos=166  (62.5 fps de proceso)
+09:48:55 [INFO]     0.3%  t=  780.5s  eventos=340  IDs activos=147  (63.0 fps de proceso)
+09:49:10 [INFO]     0.3%  t=  840.6s  eventos=369  IDs activos=146  (62.7 fps de proceso)
+09:49:26 [INFO]     0.3%  t=  900.6s  eventos=403  IDs activos=132  (62.4 fps de proceso)
+09:49:40 [INFO]     0.3%  t=  960.6s  eventos=422  IDs activos=132  (62.4 fps de proceso)
+09:49:56 [INFO]     0.4%  t= 1020.7s  eventos=444  IDs activos=113  (62.1 fps de proceso)
+09:50:11 [INFO]     0.4%  t= 1080.7s  eventos=485  IDs activos=137  (62.0 fps de proceso)
+09:50:26 [INFO]     0.4%  t= 1140.7s  eventos=515  IDs activos=163  (61.8 fps de proceso)
+09:50:39 [INFO]     0.4%  t= 1200.7s  eventos=553  IDs activos=165  (62.2 fps de proceso)
+09:50:51 [INFO]     0.4%  t= 1260.7s  eventos=582  IDs activos=165  (62.6 fps de proceso)
+09:51:04 [INFO]     0.5%  t= 1320.7s  eventos=615  IDs activos=150  (63.0 fps de proceso)
+09:51:16 [INFO]     0.5%  t= 1380.7s  eventos=655  IDs activos=138  (63.3 fps de proceso)
+09:51:29 [INFO]     0.5%  t= 1440.8s  eventos=687  IDs activos=153  (63.6 fps de proceso)
+09:51:41 [INFO]     0.5%  t= 1500.8s  eventos=719  IDs activos=180  (63.9 fps de proceso)
+09:51:54 [INFO]     0.5%  t= 1560.9s  eventos=765  IDs activos=173  (64.2 fps de proceso)
+09:52:06 [INFO]     0.6%  t= 1620.9s  eventos=804  IDs activos=195  (64.5 fps de proceso)
+09:52:16 [INFO]     0.6%  t= 1681.0s  eventos=824  IDs activos=213  (64.7 fps de proceso)
+09:52:29 [INFO]     0.6%  t= 1741.0s  eventos=870  IDs activos=194  (64.9 fps de proceso)
+09:52:42 [INFO]     0.6%  t= 1801.5s  eventos=898  IDs activos=154  (65.1 fps de proceso)
+09:52:54 [INFO]     0.6%  t= 1861.5s  eventos=916  IDs activos=129  (65.2 fps de proceso)
+09:53:09 [INFO]     0.7%  t= 1921.5s  eventos=970  IDs activos=142  (65.0 fps de proceso)
+09:53:25 [INFO]     0.7%  t= 1981.6s  eventos=993  IDs activos=164  (64.7 fps de proceso)
+09:53:41 [INFO]     0.7%  t= 2041.6s  eventos=1026  IDs activos=153  (64.4 fps de proceso)
+09:53:57 [INFO]     0.7%  t= 2101.6s  eventos=1068  IDs activos=153  (64.2 fps de proceso)
+09:54:12 [INFO]     0.7%  t= 2161.7s  eventos=1094  IDs activos=153  (64.1 fps de proceso)
+09:54:26 [INFO]     0.8%  t= 2221.7s  eventos=1129  IDs activos=133  (64.0 fps de proceso)
+09:54:39 [INFO]     0.8%  t= 2281.7s  eventos=1173  IDs activos=153  (64.2 fps de proceso)
+09:54:52 [INFO]     0.8%  t= 2341.7s  eventos=1195  IDs activos=154  (64.3 fps de proceso)
+09:55:07 [INFO]     0.8%  t= 2401.8s  eventos=1239  IDs activos=156  (64.3 fps de proceso)
+09:55:19 [INFO]     0.9%  t= 2461.8s  eventos=1271  IDs activos=142  (64.4 fps de proceso)
+09:55:32 [INFO]     0.9%  t= 2521.9s  eventos=1293  IDs activos=140  (64.6 fps de proceso)
+09:55:47 [INFO]     0.9%  t= 2581.9s  eventos=1333  IDs activos=124  (64.5 fps de proceso)
+09:56:00 [INFO]     0.9%  t= 2641.9s  eventos=1362  IDs activos=160  (64.5 fps de proceso)
+09:56:14 [INFO]     0.9%  t= 2702.0s  eventos=1385  IDs activos=196  (64.6 fps de proceso)
+09:56:27 [INFO]     1.0%  t= 2762.0s  eventos=1419  IDs activos=223  (64.7 fps de proceso)
+09:56:39 [INFO]     1.0%  t= 2822.1s  eventos=1439  IDs activos=192  (64.8 fps de proceso)
+09:56:52 [INFO]     1.0%  t= 2882.1s  eventos=1463  IDs activos=186  (64.9 fps de proceso)
+09:57:05 [INFO]     1.0%  t= 2942.1s  eventos=1500  IDs activos=125  (65.0 fps de proceso)
+09:57:18 [INFO]     1.0%  t= 3002.2s  eventos=1529  IDs activos=122  (65.1 fps de proceso)
+09:57:32 [INFO]     1.1%  t= 3062.2s  eventos=1561  IDs activos=133  (65.0 fps de proceso)
+09:57:47 [INFO]     1.1%  t= 3122.3s  eventos=1585  IDs activos=126  (64.9 fps de proceso)
+09:58:03 [INFO]     1.1%  t= 3182.3s  eventos=1615  IDs activos=181  (64.8 fps de proceso)
+09:58:17 [INFO]     1.1%  t= 3242.3s  eventos=1637  IDs activos=196  (64.7 fps de proceso)
+09:58:32 [INFO]     1.1%  t= 3302.4s  eventos=1669  IDs activos=195  (64.6 fps de proceso)
+09:58:46 [INFO]     1.2%  t= 3362.4s  eventos=1699  IDs activos=162  (64.6 fps de proceso)
+09:59:01 [INFO]     1.2%  t= 3422.4s  eventos=1726  IDs activos=141  (64.6 fps de proceso)
+09:59:15 [INFO]     1.2%  t= 3482.4s  eventos=1764  IDs activos=115  (64.5 fps de proceso)
+09:59:29 [INFO]     1.2%  t= 3542.5s  eventos=1787  IDs activos=149  (64.5 fps de proceso)
+09:59:43 [INFO]     1.2%  t= 3602.5s  eventos=1815  IDs activos=195  (64.5 fps de proceso)
+09:59:58 [INFO]     1.3%  t= 3662.6s  eventos=1857  IDs activos=254  (64.4 fps de proceso)
+10:00:13 [INFO]     1.3%  t= 3722.6s  eventos=1888  IDs activos=252  (64.3 fps de proceso)
+10:00:28 [INFO]     1.3%  t= 3782.6s  eventos=1915  IDs activos=220  (64.3 fps de proceso)
+10:00:43 [INFO]     1.3%  t= 3842.6s  eventos=1970  IDs activos=164  (64.2 fps de proceso)
+10:00:58 [INFO]     1.4%  t= 3902.6s  eventos=1996  IDs activos=185  (64.2 fps de proceso)
+10:01:14 [INFO]     1.4%  t= 3962.7s  eventos=2021  IDs activos=199  (64.0 fps de proceso)
+10:01:30 [INFO]     1.4%  t= 4022.7s  eventos=2070  IDs activos=193  (63.9 fps de proceso)
+10:01:46 [INFO]     1.4%  t= 4082.8s  eventos=2102  IDs activos=181  (63.7 fps de proceso)
+10:02:02 [INFO]     1.4%  t= 4142.8s  eventos=2124  IDs activos=194  (63.6 fps de proceso)
+10:02:18 [INFO]     1.5%  t= 4202.8s  eventos=2176  IDs activos=205  (63.5 fps de proceso)
+10:02:33 [INFO]     1.5%  t= 4262.9s  eventos=2200  IDs activos=223  (63.5 fps de proceso)
+10:02:48 [INFO]     1.5%  t= 4322.9s  eventos=2234  IDs activos=180  (63.4 fps de proceso)
+10:03:03 [INFO]     1.5%  t= 4383.0s  eventos=2273  IDs activos=161  (63.4 fps de proceso)
+10:03:18 [INFO]     1.5%  t= 4443.0s  eventos=2300  IDs activos=159  (63.3 fps de proceso)
+10:03:33 [INFO]     1.6%  t= 4503.0s  eventos=2326  IDs activos=167  (63.3 fps de proceso)
+10:03:46 [INFO]     1.6%  t= 4563.0s  eventos=2370  IDs activos=143  (63.3 fps de proceso)
+10:04:00 [INFO]     1.6%  t= 4623.1s  eventos=2390  IDs activos=152  (63.4 fps de proceso)
+10:04:15 [INFO]     1.6%  t= 4683.1s  eventos=2421  IDs activos=139  (63.3 fps de proceso)
+10:04:29 [INFO]     1.6%  t= 4743.2s  eventos=2456  IDs activos=159  (63.4 fps de proceso)
+10:04:43 [INFO]     1.7%  t= 4803.2s  eventos=2486  IDs activos=173  (63.3 fps de proceso)
+10:04:59 [INFO]     1.7%  t= 4863.2s  eventos=2520  IDs activos=175  (63.3 fps de proceso)
+10:05:15 [INFO]     1.7%  t= 4923.2s  eventos=2553  IDs activos=195  (63.2 fps de proceso)
+10:05:31 [INFO]     1.7%  t= 4983.3s  eventos=2574  IDs activos=207  (63.1 fps de proceso)
+10:05:47 [INFO]     1.7%  t= 5043.3s  eventos=2613  IDs activos=181  (63.0 fps de proceso)
+10:06:04 [INFO]     1.8%  t= 5103.4s  eventos=2652  IDs activos=183  (62.9 fps de proceso)
+10:06:20 [INFO]     1.8%  t= 5163.4s  eventos=2675  IDs activos=240  (62.8 fps de proceso)
+10:06:34 [INFO]     1.8%  t= 5223.5s  eventos=2706  IDs activos=238  (62.7 fps de proceso)
+10:06:50 [INFO]     1.8%  t= 5283.5s  eventos=2746  IDs activos=229  (62.6 fps de proceso)
+10:07:05 [INFO]     1.8%  t= 5343.6s  eventos=2767  IDs activos=202  (62.5 fps de proceso)
+10:07:20 [INFO]     1.9%  t= 5403.6s  eventos=2800  IDs activos=189  (62.5 fps de proceso)
+10:07:36 [INFO]     1.9%  t= 5463.6s  eventos=2832  IDs activos=189  (62.4 fps de proceso)
+10:07:53 [INFO]     1.9%  t= 5523.7s  eventos=2861  IDs activos=173  (62.3 fps de proceso)
+10:08:07 [INFO]     1.9%  t= 5583.7s  eventos=2904  IDs activos=147  (62.3 fps de proceso)
+10:08:22 [INFO]     2.0%  t= 5643.7s  eventos=2936  IDs activos=143  (62.3 fps de proceso)
+10:08:37 [INFO]     2.0%  t= 5703.8s  eventos=2963  IDs activos=140  (62.3 fps de proceso)
+10:08:51 [INFO]     2.0%  t= 5763.8s  eventos=3006  IDs activos=129  (62.3 fps de proceso)
+10:09:06 [INFO]     2.0%  t= 5823.9s  eventos=3031  IDs activos=138  (62.2 fps de proceso)
+10:09:22 [INFO]     2.0%  t= 5883.9s  eventos=3057  IDs activos=141  (62.2 fps de proceso)
+10:09:38 [INFO]     2.1%  t= 5943.9s  eventos=3094  IDs activos=141  (62.1 fps de proceso)
+10:09:53 [INFO]     2.1%  t= 6004.0s  eventos=3115  IDs activos=148  (62.1 fps de proceso)
+10:10:09 [INFO]     2.1%  t= 6064.0s  eventos=3143  IDs activos=180  (62.0 fps de proceso)
+10:10:24 [INFO]     2.1%  t= 6124.1s  eventos=3182  IDs activos=162  (62.0 fps de proceso)
+10:10:39 [INFO]     2.1%  t= 6184.1s  eventos=3208  IDs activos=182  (62.0 fps de proceso)
+10:10:55 [INFO]     2.2%  t= 6244.1s  eventos=3242  IDs activos=174  (61.9 fps de proceso)
+10:11:10 [INFO]     2.2%  t= 6304.1s  eventos=3286  IDs activos=196  (61.9 fps de proceso)
+10:11:24 [INFO]     2.2%  t= 6364.1s  eventos=3308  IDs activos=203  (61.9 fps de proceso)
+10:11:39 [INFO]     2.2%  t= 6424.2s  eventos=3344  IDs activos=193  (61.9 fps de proceso)
+10:11:53 [INFO]     2.2%  t= 6484.6s  eventos=3382  IDs activos=176  (61.9 fps de proceso)
+10:12:08 [INFO]     2.3%  t= 6544.7s  eventos=3398  IDs activos=165  (61.9 fps de proceso)
+10:12:22 [INFO]     2.3%  t= 6604.7s  eventos=3428  IDs activos=178  (61.9 fps de proceso)
+10:12:37 [INFO]     2.3%  t= 6664.8s  eventos=3458  IDs activos=196  (61.9 fps de proceso)
+10:12:52 [INFO]     2.3%  t= 6724.8s  eventos=3477  IDs activos=225  (61.8 fps de proceso)
+10:13:07 [INFO]     2.3%  t= 6784.9s  eventos=3513  IDs activos=202  (61.8 fps de proceso)
+10:13:23 [INFO]     2.4%  t= 6844.9s  eventos=3547  IDs activos=204  (61.7 fps de proceso)
+10:13:39 [INFO]     2.4%  t= 6904.9s  eventos=3568  IDs activos=204  (61.7 fps de proceso)
+10:13:55 [INFO]     2.4%  t= 6964.9s  eventos=3604  IDs activos=217  (61.6 fps de proceso)
+10:14:08 [INFO]     2.4%  t= 7025.0s  eventos=3631  IDs activos=217  (61.7 fps de proceso)
+10:14:21 [INFO]     2.4%  t= 7085.0s  eventos=3650  IDs activos=207  (61.7 fps de proceso)
+10:14:36 [INFO]     2.5%  t= 7145.0s  eventos=3676  IDs activos=157  (61.7 fps de proceso)
+10:14:48 [INFO] Video mangueras_m.avi terminado: {'sin_acceso': 532, 'completo': 1377, 'combinacion_no_configurada': 65, 'sin_cruce': 5306, 'revinculaciones': 317, 'perdido': 1771, 'frames': 107340, 'fps': 600.0, 'segundos': 7196.5, 'cambios_semaforo': 0, 'registros_fila': 0, 'semaforos_evaluados': 1}
+10:14:48 [INFO] Agregación: {'eventos_totales': 3745, 'eventos_utiles': 3213, 'descartados_por_ventana': 0, 'ventanas_descartadas': 0}
+10:14:48 [INFO] Validación: 0 filas comparadas
+10:14:48 [INFO] Contrato completo: 14/14 archivos en C:\Users\angel\repos\5to\computer_vision\gdl\mangueras

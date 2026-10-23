@@ -1,0 +1,16 @@
+{
+  "mangueras_m.avi": {
+    "sin_acceso": 532,
+    "completo": 1377,
+    "combinacion_no_configurada": 65,
+    "sin_cruce": 5306,
+    "revinculaciones": 317,
+    "perdido": 1771,
+    "frames": 107340,
+    "fps": 600.0,
+    "segundos": 7196.5,
+    "cambios_semaforo": 0,
+    "registros_fila": 0,
+    "semaforos_evaluados": 1
+  }
+}

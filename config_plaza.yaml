@@ -1,0 +1,104 @@
+# =============================================================================
+#  Configuración de UN cruce  ·  Ejemplo: cruce Plaza
+# -----------------------------------------------------------------------------
+#  Todas las coordenadas están en PIXELES de la resolución original del video
+#  (aquí se asume 1920x1080). Obtenlas con:
+#      python main.py puntos --config config_plaza.yaml --segundo 10
+#  y valida el resultado con:
+#      python main.py diagrama --config config_plaza.yaml   ->  gdl/plaza/diagrama.png
+#
+#  Las rutas relativas se resuelven respecto a la carpeta de ESTE archivo.
+# =============================================================================
+
+cruce:
+  id: plaza
+  nombre: "Plaza"
+  carpeta_salida: gdl/plaza            # aquí quedan los 14 archivos del contrato
+
+# -----------------------------------------------------------------------------
+# Videos del cruce. `inicio` = fecha y hora REAL del primer frame (se usa para
+# todos los timestamps). clima / luz / incidencias van a videos.csv.
+# -----------------------------------------------------------------------------
+videos:
+  - archivo: C:\Users\angel\repos\5to\lester\data\Miercoles (1)\691 (2026-10-14 06'45'11 - 2026-10-14 08'45'11).avi
+    inicio: "2026-10-14 06:45:11" # <-- OJO: Ajusta esto a la hora real del video
+    clima: despejado
+    luz: dia
+    incidencias: ""
+  # - archivo: videos/plaza/plaza_2026-10-15_1830.mp4
+  #   inicio: "2026-10-15 18:30:00"
+  #   clima: lluvia
+  #   luz: atardecer
+  #   incidencias: "camion de basura detenido 18:42-18:47"
+
+# -----------------------------------------------------------------------------
+# Modelo de detección (ultralytics)
+# -----------------------------------------------------------------------------
+modelo:
+  pesos: yolo11n.pt                   # rápido. Alternativa: yolov8n.pt
+  confianza: 0.25
+  iou: 0.5
+  imgsz: 960                          # 960-1280 ayuda con vehículos lejanos
+  dispositivo: null                   # null = auto | "cpu" | "0" (GPU 0)
+  tracker: trackers/bytetrack_oclusion.yaml   # o trackers/botsort_oclusion.yaml
+  # id de clase del modelo -> nombre de clase en el estudio (COCO por defecto)
+  clases:
+    2: auto
+    3: moto
+    5: autobus
+    7: camion
+
+# -----------------------------------------------------------------------------
+# Procesamiento
+# -----------------------------------------------------------------------------
+procesamiento:
+  frame_stride: 1                     # 1 = todos los frames (recomendado). 2 = mitad de costo
+  punto_referencia: base              # base = centro inferior de la caja (mejor para líneas en el piso)
+  segundos_perdida: 4.0               # tiempo sin ver un ID antes de cerrarlo como "perdido"
+  revinculacion:                      # 2a capa anti-oclusión
+    activa: true
+    max_segundos: 2.5
+    max_distancia_px: 90
+  diagrama_segundo: 5
+  log_cada_segundos: 60
+
+# -----------------------------------------------------------------------------
+# Accesos (entradas al cruce). 
+# -----------------------------------------------------------------------------
+accesos:
+  - id: S
+    nombre: "Avenida Santa Margarita, entrando desde el sur"
+    orden: 1
+    linea: [[1015, 574], [1236, 458]]
+    hacia: [986, 400]
+# -----------------------------------------------------------------------------
+# Salidas del cruce
+# -----------------------------------------------------------------------------
+salidas:
+  - id: sal_N
+    nombre: "Salida hacia el norte de Santa Margarita"
+    orden: 1
+    linea: [[597, 149], [704, 142]]
+    hacia: [636, 132]
+
+  - id: sal_E
+    nombre: "Salida de Santa Margarita hacia Dennys (Este)"
+    orden: 2
+    linea: [[1135, 359], [970, 241]]
+    hacia: [1086, 290]
+
+# -----------------------------------------------------------------------------
+# Movimientos: qué vuelta es cada combinación acceso -> salida
+# -----------------------------------------------------------------------------
+movimientos:
+  - {acceso: S, salida: sal_N, movimiento: frente}
+  - {acceso: S, salida: sal_E, movimiento: izquierda}
+# -----------------------------------------------------------------------------
+# Semáforos visibles en cámara.
+# -----------------------------------------------------------------------------
+semaforos: []                         # Lo dejamos vacío como pediste
+
+# Agregación temporal
+agregacion:
+  minutos_conteo: 5
+  minutos_tau: 10

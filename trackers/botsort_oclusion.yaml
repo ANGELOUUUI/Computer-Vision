@@ -1,0 +1,18 @@
+# BoT-SORT ajustado para oclusiones. Más lento que ByteTrack, pero:
+#   - gmc_method compensa movimiento de cámara (viento en poste / dron).
+#   - with_reid: True usa apariencia para re-identificar un vehículo tras una
+#     oclusión larga (más robusto que solo IoU). Requiere ultralytics reciente;
+#     `model: auto` reutiliza las features del propio detector YOLO.
+# Úsalo si con ByteTrack el % de "perdido" en notas.md sigue alto.
+tracker_type: botsort
+track_high_thresh: 0.25
+track_low_thresh: 0.1
+new_track_thresh: 0.3
+track_buffer: 120
+match_thresh: 0.9
+fuse_score: True
+gmc_method: sparseOptFlow
+proximity_thresh: 0.5
+appearance_thresh: 0.8
+with_reid: True
+model: auto

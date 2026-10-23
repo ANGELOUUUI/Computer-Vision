@@ -1,0 +1,9 @@
+# Entorno virtual
+.venv/
+__pycache__/
+*.pyc
+
+# Videos y datos pesados
+data/
+*.avi
+*.mp4

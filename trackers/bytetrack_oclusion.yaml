@@ -1,0 +1,20 @@
+# ByteTrack ajustado para cruces con oclusiones (semáforo en primer plano,
+# camiones pegados a la cámara). Basado en el bytetrack.yaml de ultralytics.
+#
+# Cambios respecto al default y por qué:
+#   track_buffer 30 -> 120 : un ID "perdido" se conserva ~4 s (a 30 fps) esperando
+#                            reaparecer. Es la palanca principal contra oclusiones.
+#   track_low_thresh 0.1   : la 2a asociación de ByteTrack usa detecciones de baja
+#                            confianza (vehículos parcialmente tapados) para no cortar IDs.
+#   match_thresh 0.8 -> 0.9: acepta asociaciones con menor IoU (vehículo que reaparece
+#                            desplazado tras la oclusión).
+# Riesgo de subir mucho track_buffer: si dos vehículos cruzan el mismo punto el ID
+# puede "saltar" de uno a otro. Revisar el video de depuración (--video-depuracion).
+# Nota: ultralytics escala track_buffer por fps/30.
+tracker_type: bytetrack
+track_high_thresh: 0.25
+track_low_thresh: 0.1
+new_track_thresh: 0.3
+track_buffer: 120
+match_thresh: 0.9
+fuse_score: True

@@ -1,0 +1,196 @@
+# =============================================================================
+#  Configuración de UN cruce  ·  Ejemplo: cruce OXXO (Guadalajara)
+# -----------------------------------------------------------------------------
+#  Todas las coordenadas están en PIXELES de la resolución original del video
+#  (aquí se asume 1920x1080). Obtenlas con:
+#      python main.py puntos --config config.yaml --segundo 10
+#  y valida el resultado con:
+#      python main.py diagrama --config config.yaml   ->  gdl/oxxo/diagrama.png
+#
+#  Para otro cruce: copia este archivo (config_plaza.yaml, config_mangueras.yaml),
+#  cambia cruce.id / carpeta_salida / videos y vuelve a trazar líneas y zonas.
+#  Las rutas relativas se resuelven respecto a la carpeta de ESTE archivo.
+# =============================================================================
+
+cruce:
+  id: oxxo
+  nombre: "Cruce OXXO"
+  carpeta_salida: gdl/oxxo            # aquí quedan los 14 archivos del contrato
+
+# -----------------------------------------------------------------------------
+# Videos del cruce. `inicio` = fecha y hora REAL del primer frame (se usa para
+# todos los timestamps). clima / luz / incidencias van a videos.csv.
+# -----------------------------------------------------------------------------
+videos:
+  - archivo: videos/oxxo/oxxo_2026-10-15_0730.mp4
+    inicio: "2026-10-15 07:30:00"
+    clima: despejado
+    luz: dia
+    incidencias: ""
+  # - archivo: videos/oxxo/oxxo_2026-10-15_1830.mp4
+  #   inicio: "2026-10-15 18:30:00"
+  #   clima: lluvia
+  #   luz: atardecer
+  #   incidencias: "camion de basura detenido 18:42-18:47"
+
+# -----------------------------------------------------------------------------
+# Modelo de detección (ultralytics)
+# -----------------------------------------------------------------------------
+modelo:
+  pesos: yolo11n.pt                   # rápido. Alternativa: yolov8n.pt
+  # pesos: modelos/best.pt            # <- modelo reentrenado (p. ej. con clase pickup)
+  confianza: 0.25
+  iou: 0.5
+  imgsz: 960                          # 960-1280 ayuda con vehículos lejanos
+  dispositivo: null                   # null = auto | "cpu" | "0" (GPU 0)
+  tracker: trackers/bytetrack_oclusion.yaml   # o trackers/botsort_oclusion.yaml
+  # id de clase del modelo -> nombre de clase en el estudio (COCO por defecto)
+  clases:
+    2: auto
+    3: moto
+    5: autobus
+    7: camion
+  # Con best.pt ajusta los ids a tu data.yaml, p. ej.:
+  #   0: auto
+  #   1: pickup
+  #   2: moto
+  #   3: autobus
+  #   4: camion
+
+# -----------------------------------------------------------------------------
+# Procesamiento
+# -----------------------------------------------------------------------------
+procesamiento:
+  frame_stride: 1                     # 1 = todos los frames (recomendado). 2 = mitad de costo
+  punto_referencia: base              # base = centro inferior de la caja (mejor para líneas en el piso)
+  segundos_perdida: 4.0               # tiempo sin ver un ID antes de cerrarlo como "perdido"
+  revinculacion:                      # 2a capa anti-oclusión (ver README)
+    activa: true
+    max_segundos: 2.5
+    max_distancia_px: 90
+  diagrama_segundo: 5
+  log_cada_segundos: 60
+
+# -----------------------------------------------------------------------------
+# Accesos (entradas al cruce). Orden geométrico: sentido horario desde el norte.
+#   linea     : 2 puntos que atraviesan SOLO los carriles de entrada
+#   hacia     : punto del lado al que avanza el vehículo (define el sentido válido)
+#   zona_cola : polígono aguas arriba de la línea, donde se forma la fila
+#   semaforo  : id del semáforo que controla este acceso
+# -----------------------------------------------------------------------------
+accesos:
+  - id: N
+    nombre: "Av. Norte, entrando desde el norte"
+    orden: 1
+    linea: [[820, 330], [945, 330]]
+    hacia: [880, 380]
+    zona_cola: [[805, 120], [945, 120], [945, 328], [805, 328]]
+    semaforo: S1
+  - id: E
+    nombre: "Calle Oriente, entrando desde el oriente"
+    orden: 2
+    linea: [[1250, 455], [1250, 555]]
+    hacia: [1200, 505]
+    zona_cola: [[1252, 450], [1600, 440], [1600, 555], [1252, 555]]
+    semaforo: S2
+  - id: S
+    nombre: "Av. Sur, entrando desde el sur"
+    orden: 3
+    linea: [[985, 800], [1165, 800]]
+    hacia: [1075, 750]
+    zona_cola: [[985, 802], [1165, 802], [1230, 1075], [985, 1075]]
+    semaforo: S1
+  - id: O
+    nombre: "Calle Poniente, entrando desde el poniente"
+    orden: 4
+    linea: [[640, 580], [640, 690]]
+    hacia: [690, 635]
+    zona_cola: [[300, 585], [638, 580], [638, 690], [300, 700]]
+    semaforo: S2
+
+# -----------------------------------------------------------------------------
+# Salidas del cruce (mismo formato; `hacia` apunta hacia afuera del cruce)
+# -----------------------------------------------------------------------------
+salidas:
+  - id: sal_N
+    nombre: "Salida al norte"
+    orden: 1
+    linea: [[975, 330], [1100, 330]]
+    hacia: [1040, 280]
+  - id: sal_E
+    nombre: "Salida al oriente"
+    orden: 2
+    linea: [[1250, 575], [1250, 680]]
+    hacia: [1300, 627]
+  - id: sal_S
+    nombre: "Salida al sur"
+    orden: 3
+    linea: [[760, 800], [950, 800]]
+    hacia: [855, 850]
+  - id: sal_O
+    nombre: "Salida al poniente"
+    orden: 4
+    linea: [[640, 450], [640, 565]]
+    hacia: [590, 507]
+
+# -----------------------------------------------------------------------------
+# Movimientos: qué vuelta es cada combinación acceso -> salida
+# (circulación por la derecha). Omite las combinaciones prohibidas: si un
+# vehículo las hace, queda como "combinacion_no_configurada" en eventos.csv.
+# -----------------------------------------------------------------------------
+movimientos:
+  # Desde el norte (va hacia el sur)
+  - {acceso: N, salida: sal_E, movimiento: izquierda}
+  - {acceso: N, salida: sal_S, movimiento: frente}
+  - {acceso: N, salida: sal_O, movimiento: derecha}
+  - {acceso: N, salida: sal_N, movimiento: U}
+  # Desde el oriente (va hacia el poniente)
+  - {acceso: E, salida: sal_S, movimiento: izquierda}
+  - {acceso: E, salida: sal_O, movimiento: frente}
+  - {acceso: E, salida: sal_N, movimiento: derecha}
+  # Desde el sur (va hacia el norte)
+  - {acceso: S, salida: sal_O, movimiento: izquierda}
+  - {acceso: S, salida: sal_N, movimiento: frente}
+  - {acceso: S, salida: sal_E, movimiento: derecha}
+  - {acceso: S, salida: sal_S, movimiento: U}
+  # Desde el poniente (va hacia el oriente)
+  - {acceso: O, salida: sal_N, movimiento: izquierda}
+  - {acceso: O, salida: sal_E, movimiento: frente}
+  - {acceso: O, salida: sal_S, movimiento: derecha}
+
+# -----------------------------------------------------------------------------
+# Semáforos visibles en cámara.
+#   focos : una caja [x, y, ancho, alto] por foco (lo más robusto), o
+#   roi   : una sola caja con toda la cabeza del semáforo.
+#   visible: false  -> se omite (semaforo_eventos.csv y filas.csv quedan vacíos)
+# -----------------------------------------------------------------------------
+semaforos:
+  - id: S1
+    nombre: "Semáforo Norte-Sur (poste esquina NE)"
+    focos:
+      rojo:     [1402, 92, 22, 22]
+      amarillo: [1402, 118, 22, 22]
+      verde:    [1402, 144, 22, 22]
+  - id: S2
+    nombre: "Semáforo Oriente-Poniente"
+    visible: false                    # tapado por el semáforo en primer plano
+    roi: [300, 60, 30, 80]
+
+# Ajustes finos del detector de semáforo (opcional; valores por defecto en config.py)
+semaforo:
+  cada_n_frames: 2
+  frames_estables: 3
+  umbral_min: 0.08
+  # rangos_hsv:   # [[H,S,V]_min, [H,S,V]_max] por color; el rojo usa dos rangos
+  #   verde: [[[40, 50, 120], [100, 255, 255]]]
+
+# Conteo de filas
+filas:
+  velocidad_max_px_s: 15              # menos de esto = vehículo detenido
+  ventana_velocidad_s: 1.0
+  evento_fin_verde: rojo              # "rojo" (protocolo) o "amarillo"
+
+# Agregación temporal
+agregacion:
+  minutos_conteo: 5
+  minutos_tau: 10

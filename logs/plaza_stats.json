@@ -1,13 +1,13 @@
 {
-  "691 (2026-10-14 06'45'11 - 2026-10-14 08'45'11).avi": {
-    "sin_acceso": 161,
-    "completo": 2351,
-    "revinculaciones": 421,
-    "sin_cruce": 8962,
-    "perdido": 408,
-    "frames": 107593,
+  "plaza_n.avi": {
+    "sin_acceso": 206,
+    "completo": 2240,
+    "revinculaciones": 435,
+    "sin_cruce": 9439,
+    "perdido": 569,
+    "frames": 107527,
     "fps": 600.0,
-    "segundos": 7236.5,
+    "segundos": 7219.4,
     "cambios_semaforo": 0,
     "registros_fila": 0,
     "semaforos_evaluados": 0

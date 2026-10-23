@@ -20,8 +20,8 @@ cruce:
 # todos los timestamps). clima / luz / incidencias van a videos.csv.
 # -----------------------------------------------------------------------------
 videos:
-  - archivo: C:\Users\angel\repos\5to\lester\data\Miercoles (1)\691 (2026-10-14 06'45'11 - 2026-10-14 08'45'11).avi
-    inicio: "2026-10-14 06:45:11" # <-- OJO: Ajusta esto a la hora real del video
+  - archivo: data/Miercoles (1)/plaza_n.avi
+    inicio: "2026-10-14 17:30:11" # <-- OJO: Ajusta esto a la hora real del video
     clima: despejado
     luz: dia
     incidencias: ""
